@@ -1,0 +1,108 @@
+$page_width: 1000px;
+
+$content_width: $page_width;
+$scroll_space: 10px;
+$scroll_width: 20px;
+$image_width: $page_width - $content_width - $scroll_width - $scroll_space;
+
+$page_content_height: 520px;
+$wall_height: 520px;
+$wall_margin: ( $page_content_height - $wall_height ) / 2;
+$wall_content_height: 80px;
+$wall_image_height: 80px;
+$scroll_height: 20px;
+
+
+#body_content {
+	width: $content_width;
+	height: $page_content_height;
+}
+
+@mixin scroll_button {
+	width: $scroll_height;
+	height: $scroll_height;
+	z-index:3;
+	float:right;
+	cursor: pointer;
+}
+
+#wall_container {
+	width: $content_width;
+	position: relative;
+	float:left;
+
+	#wall_buttons {
+		padding-top:20px;
+		float:right;
+		height: $scroll_height;
+
+		#wall_left {
+			@include scroll_button;
+		}
+
+		#wall_right {
+			@include scroll_button;
+		}
+	}
+
+	#wall_clip {
+		width: $content_width;
+		margin: $wall_margin 0 0 0;
+		height: $wall_height;
+		overflow:hidden;
+		position: relative;
+		float:left;
+
+	
+			#wall_content {
+				position:absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				// height: $wall_height;
+				
+				.category_content {
+					height:$wall_content_height;
+					clear:both;
+					margin: 20px 0 20px 0;
+					padding: 0;
+					
+					.categor_title {
+						width: 120px;
+						float:left;
+						text-align:right;
+					}
+					
+					ul {
+						height:$wall_image_height;
+						margin: 0 0 0 30px;
+						padding: 0;
+						float:left;
+					
+					
+						li {
+							padding: 0;
+							margin: 0 10px 0 0;
+							list-style: none;
+							float: left;
+
+			
+							a {
+								text-decoration: none;
+								color: #000000;
+							}
+							img {
+								border: none;
+								display: block;
+							}
+						}
+					}
+		
+				}
+			}
+		
+	}
+}

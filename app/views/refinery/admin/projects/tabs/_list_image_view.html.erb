@@ -1,0 +1,21 @@
+<li id='image_<%= image_form.object.id %>' class='clearfix record <%= cycle("on", "off") %>'>
+	<span class='image'>
+		<%= image_form.hidden_field :id %>
+    <%= image_fu image_form.object, '20x20#c' %>
+		<% index = image_form.object_name.split('[').last.split(']').first.to_i %>
+		<%= hidden_field_tag "#{f.object_name.demodulize}[images_attributes][#{index}][image_project_id]", f.object.image_projects[index].try(:id) %>
+	</span>
+	<span class='title'>
+    <%= image_form.object.title %> <span class="preview">&nbsp;</span>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag('eye.png'), image_form.object.url,
+                :target => "_blank",
+                :title => "#{image_fu image_form.object, '110x110#c', :size => '110x110'}" %>
+		
+		<%= link_to refinery_icon_tag('delete.png'), '#',
+								:remote => true,
+								:class => "remove_image",
+                :title => t('delete', :scope => 'refinery.admin.images') %>
+  </span>
+</li>

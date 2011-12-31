@@ -1,0 +1,120 @@
+#site_bar { display:none; }
+
+$page_width: 1000px;
+
+$content_width: $page_width * 0.33;
+$scroll_space: 10px;
+$scroll_width: 20px;
+$image_width: $page_width - $content_width;
+
+$page_middle_height: 520px;
+$body_content_height: 320px;
+
+
+#body_middle {
+	width: $page_width;
+	height: $page_middle_height;
+}
+
+#left_content {
+	width: $content_width;
+	float:left;
+	
+	#header_content {
+		width: $content_width;
+		margin: 0 0 50px 0;
+		
+	}
+
+	#body_content {
+		width: $content_width - $scroll_width - $scroll_space;
+	}
+	
+}
+
+
+#right_content {
+	width: $image_width;
+	float: right;
+	text-align: right;
+	
+}
+@mixin scroll_button {
+	width: $scroll_width;
+	height: $scroll_width;
+	z-index:3;
+	cursor: pointer;
+	
+}
+
+#scroll_buttons {
+	padding-top:$body_content_height - $scroll_width*2;
+	float:right;
+	width: $scroll_width;
+	
+	#scroll_up {
+		@include scroll_button;
+	}
+
+	#scroll_down {
+		@include scroll_button;
+	}
+}
+
+.scroll_content { 
+	float:left;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#scroll_container {
+	width: $content_width;
+	position: relative;
+	float: left;
+}
+
+#scroll_clip { 
+	position: relative;
+	height: $body_content_height;
+	overflow: hidden;
+}
+
+
+#galleri_container {
+	width: $image_width;
+	position: relative;
+	float: left;
+}
+
+#galleri_content { 
+	float: right;
+	position: relative;
+	height: $page_middle_height - 25px;
+	width: $page_middle_height;
+	overflow: hidden;
+}
+
+#galleri_buttons { 
+	float:right;
+	width: $page_middle_height;
+	height: 25px;
+	
+	.image_button {
+		float: right;
+		background-image: url('/assets/galleri_dots.jpg');
+		background-position: 0 0;
+		height: 12px;
+		width: 12px;
+		margin: 0 12px 0 0;
+		cursor: pointer;
+	}
+	
+	.selected {
+		background-position: 12px 0;
+	}
+}

@@ -1,0 +1,43 @@
+en:
+  refinery:
+    plugins:
+      refinery_projects:
+        title: Projects
+        description: Create and change any number of projects
+      js:
+        admin:
+          page_images:
+            add_caption: Add Caption
+            done: Done
+    admin:
+      projects:
+        actions:
+          create_new: Add New Project
+          reorder: Reorder Projects
+          reorder_done: Done Reordering Projects
+        records:
+          title: Projects
+          sorry_no_results: Sorry! There are no results found.
+          no_items_yet: There are no projects yet. Click "Add New Project" to add your first project.
+        project:
+          view_live_html: View this project live <br/><em>(opens in a new window)</em>
+          edit: Edit this project
+          delete: Remove this project forever
+        form:
+          title: Project titel
+          header: Header information
+          description: Description
+        tabs:
+          image_bar:
+            add: Add Image
+    projects:
+      show:
+        other: Other projects
+    activerecord:
+      models:
+        project: Project
+      attributes:
+        project:
+          title: Project titel
+          header: Header information
+          description: Description

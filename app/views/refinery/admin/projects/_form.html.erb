@@ -1,0 +1,37 @@
+<%= form_for [main_app, :refinery_admin, @project] do |f| -%>
+  
+	<%= render :partial => "/refinery/admin/error_messages",
+           :locals => {
+             :object => @project,
+             :include_object_name => true
+           } %>
+
+
+  <div class='field'>
+    <%= f.label :title -%>
+
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+  </div>
+  
+	<%= render :partial => "tabbed_fields",
+						 :locals => { :f => f,
+           	 :tabbed_fields => [:fields, :description, :image] } %>
+
+							
+	<%= render :partial => "form_advanced_options",
+	           :locals => {
+	              :f => f
+	            } %>
+  
+  <%= render :partial => "/refinery/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.projects.project'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @project.title)
+              } %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'refinery/admin/projects/projects' %>
+<% end %>

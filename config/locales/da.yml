@@ -1,0 +1,43 @@
+da:
+  refinery:
+    plugins:
+      refinery_projects:
+        title: Projekter
+        description: Opret og ændrer i et hvilket som helst antal projekter
+      js:
+        admin:
+          page_images:
+            add_caption: Tilføj tekst
+            done: Færdig
+    admin:
+      projects:
+        actions:
+          create_new: Tilføj et nyt projekt
+          reorder: Redigér rækkefølgen af projekter
+          reorder_done: Gem rækkefølgen
+        records:
+          title: Projekt
+          sorry_no_results: "Desværre, der blev ikke fundet nogle projekter."
+          no_items_yet: Der er ingen projekter endnu. Klik på "Tilføj nyt projekt" for at tilføje dit første projekt.
+        project:
+          view_live_html: Vis projektet live <br/><em>(åbner i et nyt vindue)</em>
+          edit: Rediger projektet
+          delete: Slet projektet permanent
+        form:
+          title: Projekttitel
+          header: Headerinformation
+          description: Beskrivelse
+        tabs:
+          image_bar:
+            add: Tilføj billed
+    projects:
+      show:
+        other: Andre projekter
+    activerecord:
+      models:
+        project: Projekt
+      attributes:
+        project:
+          title: Projekttitel
+          header: Headerinformation
+          description: Beskrivelse

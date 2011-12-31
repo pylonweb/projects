@@ -1,0 +1,23 @@
+<div id="body_top"></div>
+<div id="body_middle">
+<section id="body_content">
+<%= @page.content_for(:body).html_safe if @page.content_for(:body) %>
+
+
+
+<ul id="projects">
+  <% @projects.each do |project| %>
+		
+    <li class="project_title">
+      <%= link_to "<span class='arrow'> &#9658; </span> #{project.title}".html_safe, main_app.refinery_project_path(project) %> 
+    </li>
+  <% end %>
+</ul>
+
+</section>
+</div>
+<div id="body_bottom"></div>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'refinery/projects/projects' %>
+<% end %>

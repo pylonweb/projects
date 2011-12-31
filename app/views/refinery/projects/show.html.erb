@@ -1,0 +1,35 @@
+<div id="body_top"></div>
+<div id="body_middle">
+	<section id="left_content">
+		<section id="header_content">
+			<h1> <%= @project.title %></h1>
+			<% @project.fields.each do |field| %>
+				<%= field.title %>: <%= field.value %><br />
+			<% end %>
+		</section>
+		<br />
+		<section id="body_content">
+			<%= @project.description.html_safe %>
+		</section>
+	</section>
+	
+	<section id="right_content">
+		<section id="slideshow">
+			<% @project.images.each do |image| %>
+				<div style="display:none"><%= image_fu image, "670x520" %></div>
+			<% end %>
+		</section>
+	</section>
+
+</div>
+<div id="body_bottom"></div>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'refinery/projects/projects' %>
+<% end %>
+
+<% content_for :javascripts do %>
+	<%= javascript_include_tag 'refinery/projects/jquery.mousewheel' %>
+  <%= javascript_include_tag 'refinery/projects/jquery.scroll' %>
+	<%= javascript_include_tag 'refinery/projects/jquery.image_galleri' %>
+<% end %>

@@ -1,0 +1,13 @@
+<div class='wym_skin_refinery page_part' id='page_fields'>
+	<%= render :partial => 'refinery/admin/projects/tabs/fields_bar', :locals => { :f => f } %>
+	
+	<%= f.fields_for :fields do |field_form| %>
+		<%= render :partial => 'refinery/admin/projects/tabs/field', :locals => { :f => f, :field_form => field_form } %>
+	<% end %>
+	
+	
+</div>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'refinery/admin/projects/fields' %>
+<% end %>

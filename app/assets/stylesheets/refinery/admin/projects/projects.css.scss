@@ -1,0 +1,71 @@
+a#add_image_link {
+  margin-top: 0;
+  line-height: 29px;
+  padding-left: 20px;
+  display: inline;
+  border-bottom: 0;
+  background: image-url('/assets/refinery/icons/add.png') no-repeat 0px 6px;
+}
+
+a#remove_image_link {
+	margin-top: 0;
+  line-height: 29px;
+  padding-left: 20px;
+  display: inline;
+  border-bottom: 0;
+  background: image-url('/assets/refinery/icons/delete.png') no-repeat 0px 6px;
+}
+
+.off {
+	background-color: #EAEAEA!important;
+
+}
+
+.on {
+  background-color: white!important;
+}
+
+.placeholder {
+	height: 31px;
+}
+
+#project_images {
+	padding-left: 0px;
+}
+
+.fields {
+
+	height: 30px;
+	margin: 0 0 15px 0;
+	
+	label {
+		margin: 8px 10px 0 20px;
+		float:left;
+	}
+	
+	input {
+		margin: 0 5px 0 0;
+		float:left;
+
+		
+	}
+	.title{
+		margin-right: 20px;
+	}
+	
+	.value {
+		width: 467px;
+	}
+	
+	a {
+		margin: 8px 5px 0 0;
+		float: left;
+		font-weight: bold;
+	}
+	
+}
+
+hr.field_line {
+	margin: 0 0 15px 0;
+	border-color: #CCC;
+}

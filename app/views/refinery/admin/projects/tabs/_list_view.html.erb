@@ -1,0 +1,9 @@
+<div class='wym_box field images_field' %>
+	<ul id='project_images'>
+		<%= f.fields_for :images do |image_form| %>
+	    	<%= render :partial => 'refinery/admin/projects/tabs/list_image_view', :locals => { :f => f, :image_form => image_form } %>
+		<% end %>
+	
+		<%= render :partial => 'refinery/admin/projects/tabs/empty_list_image', :locals => { :f => f } %>
+	</ul>
+</div>

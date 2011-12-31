@@ -1,0 +1,38 @@
+<div id="body_top"></div>
+<div id="body_middle">
+	<section id="body_content">
+		<%= @page.content_for(:body).html_safe if @page.content_for(:body) %>
+		<ul id="slideshow_content">
+			<% current_year = 0 %>
+		  <% @projects.each do |project| %>
+		    <li class="project_images">
+			    <% 
+					if project.year.year != current_year 
+						current_year = project.year.year
+						show_year = current_year
+					else
+						show_year = ""
+					end
+			    link_image = "
+			    <div class='title'>#{project.title}</div><br />
+			    <div class='image'>#{image_fu project.images.first, "550x200" }</div><br />
+					<div class='year'>#{show_year}</div>
+			     ".html_safe %>
+	        <%= link_to link_image, main_app.refinery_project_path(project), :id => "project_link" %> 
+		    </li>
+		  <% end %>
+		</ul>
+	</section>
+</div>
+<div id="body_bottom"></div>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'refinery/projects/projects' %>
+	<%= stylesheet_link_tag 'refinery/projects/completed' %>
+<% end %>
+
+
+<% content_for :javascripts do %>
+	<%= javascript_include_tag 'refinery/projects/jquery.mousewheel' %>
+	<%= javascript_include_tag 'refinery/projects/jquery.slideshow' %>
+<% end %>

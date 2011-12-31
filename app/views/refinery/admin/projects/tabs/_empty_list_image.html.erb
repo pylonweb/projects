@@ -1,0 +1,12 @@
+<li id='empty' class='empty clearfix record <%= cycle("on", "on-hover") %>' style="display:none">
+	
+	<span class='image'>
+		<%= hidden_field_tag "empty_#{f.object_name.demodulize}[images_attributes][#{f.object.images.size}][id]" %>
+	</span>
+	<span class='title'>
+    <span class="preview">&nbsp;</span>
+  </span>
+  <span class='actions'>
+
+  </span>
+</li>

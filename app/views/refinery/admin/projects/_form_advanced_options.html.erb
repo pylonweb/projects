@@ -1,0 +1,43 @@
+<div id='more_options_field'>
+  <p>
+    <%= link_to t('.advanced_options'), "#",
+                :id => 'toggle_advanced_options',
+                :title => t('.toggle_advanced_options') %>
+  </p>
+  <span id='draft_field'>
+    <%= f.check_box :draft %>
+    <%= f.label :draft, t('.save_as_draft'),
+                :class => "stripped" %>
+  </span>
+</div>
+<div id='more_options' style="display:none;">
+	<div class='field'>
+		<span class='label_with_help'>
+			<%= f.label :completed, t('.completed') %>
+			<%= refinery_help_tag t('.completed_help') %>
+		</span>
+		<%= f.check_box :completed %>
+	</div>
+	
+	<div class='field'>
+		<span class='label_with_help'>
+		  <%= f.label :project_category_id, t('.category') %>
+		  <%= refinery_help_tag t('.category_help') %>
+		</span>
+	  <%= f.select(:project_category_id, ::Refinery::ProjectCategory.all.collect {|c| [ c.title, c.id ] }, {:prompt => t('.select_category')}) %>
+	</div>
+	
+	<div class='field'>
+		<span class='label_with_help'>
+			<%= f.label :completed, t('.year') %>
+			<%= refinery_help_tag t('.year_help') %>
+		</span>
+		<%= f.date_select :year, :discard_day => true, :discard_month => true, :prompt => t('.select_year') %>
+	</div>
+
+	<!-- <div class="hemisquare right_side">
+	  <%#=render :partial => '/seo_meta/form',
+	       #      :locals => { :form => f } %>
+	</div>-->
+
+</div>

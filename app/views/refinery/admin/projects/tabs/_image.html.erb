@@ -1,0 +1,8 @@
+<div class='wym_skin_refinery page_part' id='page_image_picker'>
+	<%= render :partial => '/refinery/admin/projects/tabs/image_bar' %>
+	<%= render :partial => '/refinery/admin/projects/tabs/images', :locals => {:f => f} %>
+</div>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'refinery/admin/projects/project-image-picker' %>
+<% end %>
